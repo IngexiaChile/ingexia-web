@@ -21,7 +21,7 @@ export function Logo({
   iconClassName,
   wordClassName,
 }: LogoProps) {
-  const taglineColor = tone === "dark" ? "text-brand-blue-light" : "text-brand-blue";
+  const taglineColor = tone === "dark" ? "text-brass-light" : "text-brass-ink";
 
   return (
     <span
@@ -39,7 +39,7 @@ export function Logo({
             wordClassName,
           )}
         >
-          INGEX<span className="text-brand-blue">IA</span>
+          INGEX<span className="text-brass">IA</span>
         </span>
         {showTagline && (
           <span

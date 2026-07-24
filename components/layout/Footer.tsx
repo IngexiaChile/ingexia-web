@@ -7,9 +7,9 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-brand-navy">
+    <footer className="bg-ink">
       <Container className="flex flex-col gap-12 py-16 sm:flex-row sm:items-start sm:justify-between sm:py-20">
-        <div className="text-white">
+        <div className="text-surface">
           <Logo
             tone="dark"
             showTagline
@@ -21,7 +21,7 @@ export function Footer() {
         <div className="flex flex-col gap-3 text-sm sm:items-end">
           <a
             href={contactHref}
-            className="text-white/80 transition-colors duration-300 hover:text-white"
+            className="text-surface/75 transition-colors duration-300 hover:text-surface"
           >
             {siteConfig.email}
           </a>
@@ -29,20 +29,17 @@ export function Footer() {
             href={siteConfig.social.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-1.5 text-white/80 transition-colors duration-300 hover:text-white"
+            className="group inline-flex items-center gap-1.5 text-surface/75 transition-colors duration-300 hover:text-surface"
           >
             LinkedIn
-            <ArrowUpRight
-              className="h-4 w-4 transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-              aria-hidden="true"
-            />
+            <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
           </a>
         </div>
       </Container>
 
-      <div className="border-t border-white/10">
+      <div className="border-t border-surface/10">
         <Container className="py-6">
-          <p className="text-xs text-white/50">
+          <p className="text-xs text-surface/50">
             © {year} {siteConfig.name}. Todos los derechos reservados.
           </p>
         </Container>

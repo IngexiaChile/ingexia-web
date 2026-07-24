@@ -13,7 +13,7 @@ export default function AppleIcon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#0D1B2A",
+          backgroundColor: "#12171B",
         }}
       >
         <svg
@@ -34,7 +34,7 @@ export default function AppleIcon() {
             y1="32"
             x2="104"
             y2="88"
-            stroke="#2563EB"
+            stroke="#8A6A3B"
             strokeWidth="10"
             strokeLinecap="round"
           />
@@ -47,8 +47,8 @@ export default function AppleIcon() {
             strokeWidth="10"
             strokeLinecap="round"
           />
-          <circle cx="16" cy="32" r="9" fill="#2563EB" />
-          <circle cx="104" cy="88" r="9" fill="#2563EB" />
+          <circle cx="16" cy="32" r="9" fill="#8A6A3B" />
+          <circle cx="104" cy="88" r="9" fill="#8A6A3B" />
           <circle cx="104" cy="32" r="9" fill="#FFFFFF" />
           <circle cx="16" cy="88" r="9" fill="#FFFFFF" />
         </svg>

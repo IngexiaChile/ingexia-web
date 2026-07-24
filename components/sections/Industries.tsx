@@ -1,39 +1,36 @@
 import { Container } from "@/components/ui/Container";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { industries } from "@/data/content";
 
+// Deliberately a compact strip, not a full card grid — this is supporting
+// information and should not compete in visual weight with Services or
+// Methodology.
 export function Industries() {
   return (
-    <section
-      id="industrias"
-      className="scroll-mt-24 bg-brand-gray-50 pb-28 pt-20 sm:pb-32 sm:pt-24"
-    >
+    <section id="industrias" className="scroll-mt-24 bg-surface py-16 sm:py-20">
       <Container>
         <Reveal>
-          <SectionHeading
-            eyebrow="Industrias"
-            title="Experiencia técnica en sectores de alta exigencia operativa."
-            align="center"
-          />
-        </Reveal>
-
-        <div className="mt-20 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-          {industries.map(({ icon: Icon, label }, index) => (
-            <Reveal key={label} delay={(index % 4) * 70}>
-              <div className="group flex h-full flex-col items-center gap-4 rounded-2xl border border-brand-gray-light bg-white p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:border-brand-blue/40 hover:bg-brand-blue-50 hover:shadow-lg hover:shadow-brand-navy/5">
-                <Icon
-                  className="h-6 w-6 text-brand-blue transition-transform duration-300 group-hover:scale-110"
-                  aria-hidden="true"
-                  strokeWidth={1.75}
-                />
-                <span className="text-sm font-medium text-brand-navy">
+          <div className="flex flex-col gap-6 border-t border-ink/15 pt-8 sm:flex-row sm:items-center sm:justify-between">
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-brass-ink">
+              Industrias
+            </p>
+            <ul className="flex flex-wrap gap-x-8 gap-y-3">
+              {industries.map(({ icon: Icon, label }) => (
+                <li
+                  key={label}
+                  className="inline-flex items-center gap-2 text-sm font-medium text-ink"
+                >
+                  <Icon
+                    className="h-4 w-4 text-graphite"
+                    aria-hidden="true"
+                    strokeWidth={1.5}
+                  />
                   {label}
-                </span>
-              </div>
-            </Reveal>
-          ))}
-        </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Reveal>
       </Container>
     </section>
   );

@@ -6,11 +6,6 @@ import {
   Share2,
   Workflow,
   ShieldCheck,
-  RefreshCw,
-  Puzzle,
-  Sparkles,
-  Layers,
-  Minimize2,
   Search,
   Hammer,
   Gauge,
@@ -25,32 +20,71 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
-export type Capability = {
-  icon: LucideIcon;
-  label: string;
-};
+/**
+ * Credibility strip: qualitative, verifiable-by-nature statements about how
+ * Ingexia operates. Deliberately free of invented numbers, client names or
+ * testimonials — replace with real metrics as they become available.
+ */
+export type CredibilityPoint = { label: string };
 
-export const capabilities: Capability[] = [
-  { icon: BrainCircuit, label: "Inteligencia Artificial" },
-  { icon: Code2, label: "Ingeniería de Software" },
-  { icon: Network, label: "Arquitectura Empresarial" },
-  { icon: Cloud, label: "Cloud" },
-  { icon: Share2, label: "Integración de Sistemas" },
-  { icon: Workflow, label: "Automatización" },
-  { icon: ShieldCheck, label: "Ciberseguridad" },
+export const credibilityPoints: CredibilityPoint[] = [
+  { label: "Equipos de arquitectura senior en cada proyecto" },
+  { label: "Proyectos en banca, salud, industria y logística" },
+  { label: "Metodología propia, del diagnóstico a la operación continua" },
+  { label: "Socios de la firma involucrados directamente, no solo comercial" },
 ];
 
-export type ValueProp = {
+/**
+ * System graph: the single place in the site where the isotype's node
+ * geometry appears as a diagram. Arquitectura Empresarial is the hub because
+ * it is, in practice, the discipline that connects the other six — the
+ * diagram documents a real relationship between services, not a decorative
+ * network. Each node's `note` folds in what used to be the separate
+ * "Why Ingexia" value props.
+ */
+export type SystemNode = {
   icon: LucideIcon;
-  title: string;
+  label: string;
+  note: string;
 };
 
-export const valueProps: ValueProp[] = [
-  { icon: RefreshCw, title: "Modernizamos plataformas críticas." },
-  { icon: Puzzle, title: "Integramos sistemas complejos." },
-  { icon: Sparkles, title: "Aplicamos IA donde realmente genera valor." },
-  { icon: Layers, title: "Diseñamos soluciones escalables." },
-  { icon: Minimize2, title: "Reducimos la complejidad tecnológica." },
+export const systemHub: SystemNode = {
+  icon: Network,
+  label: "Arquitectura Empresarial",
+  note: "La disciplina que conecta y ordena el resto.",
+};
+
+export const systemNodes: SystemNode[] = [
+  {
+    icon: BrainCircuit,
+    label: "Inteligencia Artificial",
+    note: "Aplicada donde genera valor medible, no como moda.",
+  },
+  {
+    icon: Code2,
+    label: "Ingeniería de Software",
+    note: "Soluciones escalables, no atajos de corto plazo.",
+  },
+  {
+    icon: Cloud,
+    label: "Cloud",
+    note: "Costo, seguridad y rendimiento en equilibrio.",
+  },
+  {
+    icon: Share2,
+    label: "Integración de Sistemas",
+    note: "Plataformas complejas convertidas en un solo ecosistema.",
+  },
+  {
+    icon: Workflow,
+    label: "Automatización",
+    note: "Menos complejidad operativa, menos error humano.",
+  },
+  {
+    icon: ShieldCheck,
+    label: "Ciberseguridad",
+    note: "Seguridad incorporada desde el diseño, no al final.",
+  },
 ];
 
 export type Service = {
@@ -146,6 +180,45 @@ export const methodologySteps: MethodologyStep[] = [
     title: "Evolución Continua",
     description:
       "Acompañamos la evolución de la plataforma en el tiempo, adaptándola a nuevas necesidades del negocio.",
+  },
+];
+
+/**
+ * Engagement model ("modelo de intervención"): describes how a project is
+ * governed and staffed, distinct from `methodologySteps` (the technical
+ * engineering phases). Written as operating principles rather than a
+ * fabricated case study — no client names or invented outcomes.
+ */
+export type EngagementPrinciple = {
+  step: string;
+  title: string;
+  description: string;
+};
+
+export const engagementModel: EngagementPrinciple[] = [
+  {
+    step: "01",
+    title: "Un equipo, no un ticket",
+    description:
+      "Arquitectos senior asignados de forma estable al proyecto, con continuidad de principio a fin.",
+  },
+  {
+    step: "02",
+    title: "Gobierno conjunto",
+    description:
+      "Las decisiones técnicas se revisan junto al equipo de TI del cliente, no se ejecutan a ciegas desde afuera.",
+  },
+  {
+    step: "03",
+    title: "Entregables medibles por fase",
+    description:
+      "Cada etapa cierra con resultados verificables, no con promesas abiertas hacia la siguiente.",
+  },
+  {
+    step: "04",
+    title: "Transferencia real de conocimiento",
+    description:
+      "El equipo interno queda capacitado para operar y evolucionar la solución, sin dependencia permanente.",
   },
 ];
 

@@ -7,14 +7,9 @@ export function Methodology() {
   return (
     <section
       id="metodologia"
-      className="relative scroll-mt-24 overflow-hidden bg-brand-navy pb-28 pt-20 sm:pb-32 sm:pt-24"
+      className="scroll-mt-24 bg-ink pb-24 pt-20 sm:pb-28 sm:pt-24"
     >
-      <div
-        className="bg-grid pointer-events-none absolute inset-0 opacity-40"
-        aria-hidden="true"
-      />
-
-      <Container className="relative">
+      <Container>
         <Reveal>
           <SectionHeading
             eyebrow="Metodología"
@@ -26,7 +21,7 @@ export function Methodology() {
 
         <div className="relative mt-20">
           <div
-            className="absolute inset-x-0 top-6 hidden h-px bg-white/15 lg:block"
+            className="absolute inset-x-0 top-6 hidden h-px bg-surface/15 lg:block"
             aria-hidden="true"
           />
 
@@ -34,22 +29,22 @@ export function Methodology() {
             {methodologySteps.map(
               ({ icon: Icon, step, title, description }, index) => (
                 <Reveal key={step} delay={index * 90}>
-                  <div className="group relative flex flex-col gap-4">
-                    <div className="relative z-10 inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-brand-navy text-white transition-all duration-300 group-hover:scale-110 group-hover:border-brand-blue/50">
+                  <div className="relative flex flex-col gap-4">
+                    <div className="relative z-10 inline-flex h-12 w-12 items-center justify-center rounded-full border border-surface/20 bg-ink text-surface">
                       <Icon
                         className="h-5 w-5"
                         aria-hidden="true"
-                        strokeWidth={1.75}
+                        strokeWidth={1.5}
                       />
                     </div>
                     <div>
-                      <p className="font-mono text-xs tracking-[0.2em] text-brand-blue-light">
+                      <p className="font-mono text-xs tracking-[0.2em] text-brass-light">
                         {step}
                       </p>
-                      <h3 className="mt-2 text-base font-semibold tracking-tight text-white">
+                      <h3 className="mt-2 text-base font-semibold tracking-tight text-surface">
                         {title}
                       </h3>
-                      <p className="mt-2 text-sm leading-relaxed text-white/65">
+                      <p className="mt-2 text-sm leading-relaxed text-graphite-2">
                         {description}
                       </p>
                     </div>

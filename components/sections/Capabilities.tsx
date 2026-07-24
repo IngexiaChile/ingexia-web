@@ -1,34 +1,72 @@
 import { Container } from "@/components/ui/Container";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
-import { capabilities } from "@/data/content";
+import { systemHub, systemNodes } from "@/data/content";
 
+// The single place in the site where the isotype's node geometry becomes a
+// diagram — a hub-and-spoke org chart, not a floating network graph. It
+// documents a real relationship (Arquitectura Empresarial connects the other
+// six disciplines) rather than decorating the page. Reveals with the same
+// uniform fade used everywhere else; nothing here animates on its own.
 export function Capabilities() {
-  return (
-    <section className="relative overflow-hidden bg-brand-gray-50 py-12 sm:py-16">
-      <div
-        className="pointer-events-none absolute left-1/2 top-0 h-72 w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-blue/10 blur-[120px]"
-        aria-hidden="true"
-      />
+  const HubIcon = systemHub.icon;
 
-      <Container className="relative">
+  return (
+    <section
+      id="capacidades"
+      className="scroll-mt-24 bg-surface py-24 sm:py-28"
+    >
+      <Container>
         <Reveal>
-          <ul className="grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-brand-gray-light bg-brand-gray-light sm:grid-cols-3 lg:grid-cols-7">
-            {capabilities.map(({ icon: Icon, label }) => (
-              <li
-                key={label}
-                className="group flex flex-col items-center justify-center gap-3 bg-white px-4 py-7 text-center transition-colors duration-300 hover:bg-brand-blue-50"
-              >
-                <Icon
-                  className="h-5 w-5 text-brand-blue transition-transform duration-300 group-hover:scale-110"
-                  aria-hidden="true"
-                  strokeWidth={1.75}
-                />
-                <span className="text-xs font-medium text-brand-navy">
-                  {label}
-                </span>
-              </li>
-            ))}
-          </ul>
+          <SectionHeading
+            eyebrow="Capacidades"
+            title="Un sistema conectado, no siete servicios sueltos."
+            subtitle="La arquitectura empresarial es la disciplina que ordena y conecta el resto de nuestras capacidades — así estructuramos cada proyecto."
+          />
+        </Reveal>
+
+        <Reveal delay={100}>
+          <div className="mt-16">
+            <div className="mx-auto flex max-w-sm flex-col items-center border border-ink bg-ink px-6 py-6 text-center">
+              <HubIcon
+                className="h-6 w-6 text-brass-light"
+                aria-hidden="true"
+                strokeWidth={1.5}
+              />
+              <span className="mt-3 text-sm font-semibold text-surface">
+                {systemHub.label}
+              </span>
+              <span className="mt-1.5 text-xs leading-relaxed text-graphite-2">
+                {systemHub.note}
+              </span>
+            </div>
+
+            <div className="mx-auto h-8 w-px bg-ink/20" aria-hidden="true" />
+            <div className="h-px w-full bg-ink/20" aria-hidden="true" />
+
+            <div className="grid grid-cols-1 gap-x-6 sm:grid-cols-2 lg:grid-cols-3">
+              {systemNodes.map(({ icon: Icon, label, note }, index) => (
+                <Reveal key={label} delay={index * 60}>
+                  <div className="flex flex-col items-center pt-0 text-center">
+                    <div className="h-6 w-px bg-ink/20" aria-hidden="true" />
+                    <div className="mt-0 w-full border border-ink/12 bg-surface-2 p-6">
+                      <Icon
+                        className="mx-auto h-5 w-5 text-brass-ink"
+                        aria-hidden="true"
+                        strokeWidth={1.5}
+                      />
+                      <h3 className="mt-3 text-sm font-semibold text-ink">
+                        {label}
+                      </h3>
+                      <p className="mt-2 text-xs leading-relaxed text-graphite">
+                        {note}
+                      </p>
+                    </div>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
         </Reveal>
       </Container>
     </section>

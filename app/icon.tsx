@@ -18,7 +18,7 @@ export default function Icon() {
       >
         <path
           d="M60 6 L104 32 V88 L60 114 L16 88 V32 Z"
-          stroke="#0D1B2A"
+          stroke="#12171B"
           strokeWidth="11"
           strokeLinejoin="round"
         />
@@ -27,7 +27,7 @@ export default function Icon() {
           y1="32"
           x2="104"
           y2="88"
-          stroke="#2563EB"
+          stroke="#8A6A3B"
           strokeWidth="11"
           strokeLinecap="round"
         />
@@ -36,14 +36,14 @@ export default function Icon() {
           y1="32"
           x2="16"
           y2="88"
-          stroke="#0D1B2A"
+          stroke="#12171B"
           strokeWidth="11"
           strokeLinecap="round"
         />
-        <circle cx="16" cy="32" r="10" fill="#2563EB" />
-        <circle cx="104" cy="88" r="10" fill="#2563EB" />
-        <circle cx="104" cy="32" r="10" fill="#0D1B2A" />
-        <circle cx="16" cy="88" r="10" fill="#0D1B2A" />
+        <circle cx="16" cy="32" r="10" fill="#8A6A3B" />
+        <circle cx="104" cy="88" r="10" fill="#8A6A3B" />
+        <circle cx="104" cy="32" r="10" fill="#12171B" />
+        <circle cx="16" cy="88" r="10" fill="#12171B" />
       </svg>
     ),
     { ...size },

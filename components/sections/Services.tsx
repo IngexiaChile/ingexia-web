@@ -7,7 +7,7 @@ export function Services() {
   return (
     <section
       id="servicios"
-      className="scroll-mt-24 bg-brand-gray-50 pb-28 pt-20 sm:pb-32 sm:pt-24"
+      className="scroll-mt-24 bg-surface pb-24 pt-20 sm:pb-28 sm:pt-24"
     >
       <Container>
         <Reveal>
@@ -18,23 +18,29 @@ export function Services() {
           />
         </Reveal>
 
-        <div className="mt-20 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map(({ icon: Icon, title, description }, index) => (
             <Reveal key={title} delay={(index % 3) * 80}>
-              <article className="group h-full rounded-2xl border border-brand-gray-light bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-blue/40 hover:shadow-lg hover:shadow-brand-navy/5">
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-brand-navy text-white transition-all duration-300 group-hover:scale-110 group-hover:bg-brand-blue">
+              <article className="group h-full border border-ink/15 bg-surface transition-colors duration-200 hover:border-brass-ink">
+                <div className="flex items-center justify-between border-b border-ink/15 px-6 py-3 font-mono text-[11px] uppercase tracking-[0.14em] text-graphite">
+                  <span>Servicio</span>
+                  <span>
+                    {String(index + 1).padStart(2, "0")}/{String(services.length).padStart(2, "0")}
+                  </span>
+                </div>
+                <div className="p-6">
                   <Icon
-                    className="h-6 w-6"
+                    className="h-5 w-5 text-brass-ink"
                     aria-hidden="true"
-                    strokeWidth={1.75}
+                    strokeWidth={1.5}
                   />
-                </span>
-                <h3 className="mt-6 text-lg font-semibold tracking-tight text-brand-navy">
-                  {title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-brand-gray">
-                  {description}
-                </p>
+                  <h3 className="mt-4 text-lg font-semibold tracking-tight text-ink">
+                    {title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-graphite">
+                    {description}
+                  </p>
+                </div>
               </article>
             </Reveal>
           ))}

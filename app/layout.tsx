@@ -87,7 +87,7 @@ export default function RootLayout({
       lang="es"
       className={`${geistSans.variable} ${geistMono.variable} ${sora.variable}`}
     >
-      <body className="flex min-h-screen flex-col bg-brand-gray-50 font-sans text-brand-navy antialiased">
+      <body className="flex min-h-screen flex-col bg-surface font-sans text-ink antialiased">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}

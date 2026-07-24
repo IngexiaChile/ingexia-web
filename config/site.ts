@@ -9,9 +9,9 @@ export const siteConfig = {
     linkedin: "https://www.linkedin.com/company/ingexia",
   },
   nav: [
+    { label: "Capacidades", href: "#capacidades" },
     { label: "Servicios", href: "#servicios" },
     { label: "Metodología", href: "#metodologia" },
-    { label: "Industrias", href: "#industrias" },
     { label: "Nosotros", href: "#nosotros" },
     { label: "Contacto", href: "#contacto" },
   ],

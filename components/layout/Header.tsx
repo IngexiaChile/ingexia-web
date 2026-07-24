@@ -9,9 +9,10 @@ import { useActiveSection } from "@/hooks/useActiveSection";
 import { cn } from "@/lib/cn";
 import { siteConfig, contactHref } from "@/config/site";
 
-const WHITE: [number, number, number] = [255, 255, 255];
-const NAVY: [number, number, number] = [13, 27, 42];
-const MUTED: [number, number, number] = [100, 116, 139];
+const SURFACE: [number, number, number] = [237, 239, 234];
+const INK: [number, number, number] = [18, 23, 27];
+const GRAPHITE: [number, number, number] = [87, 98, 107];
+const BRASS = "#8A6A3B";
 
 function mix(from: [number, number, number], to: [number, number, number], t: number) {
   const [r, g, b] = from.map((c, i) => Math.round(c + (to[i] - c) * t));
@@ -43,13 +44,13 @@ export function Header() {
   }, [mobileOpen]);
 
   const t = mobileOpen ? 1 : scrollProgress;
-  const strongColor = mix(WHITE, NAVY, t);
-  const mutedColor = mix(WHITE, MUTED, t);
+  const strongColor = mix(SURFACE, INK, t);
+  const mutedColor = mix(SURFACE, GRAPHITE, t);
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
       <div
-        className="absolute inset-0 border-b border-brand-gray-light bg-white/80 shadow-[0_1px_0_rgba(13,27,42,0.04),0_16px_32px_-20px_rgba(13,27,42,0.25)] backdrop-blur-xl transition-opacity duration-300 ease-out"
+        className="absolute inset-0 border-b border-ink/10 bg-surface/85 shadow-[0_1px_0_rgba(18,23,27,0.05)] backdrop-blur-xl transition-opacity duration-300 ease-out"
         style={{ opacity: t }}
         aria-hidden="true"
       />
@@ -75,7 +76,7 @@ export function Header() {
                   "group relative inline-block py-1 text-sm font-medium transition-opacity duration-300",
                   isActive ? "opacity-100" : "opacity-75 hover:opacity-100",
                 )}
-                style={{ color: isActive ? "#2563EB" : mutedColor }}
+                style={{ color: isActive ? BRASS : mutedColor }}
               >
                 {item.label}
                 <span
@@ -98,7 +99,7 @@ export function Header() {
 
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-md transition-colors duration-300 md:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-sm transition-colors duration-300 md:hidden"
           style={{ color: strongColor }}
           aria-label={mobileOpen ? "Cerrar menú" : "Abrir menú"}
           aria-expanded={mobileOpen}
@@ -113,7 +114,7 @@ export function Header() {
       </Container>
 
       {mobileOpen && (
-        <div className="relative border-t border-brand-gray-light bg-white md:hidden">
+        <div className="relative border-t border-ink/10 bg-surface md:hidden">
           <Container className="flex flex-col gap-1 py-4">
             {siteConfig.nav.map((item) => {
               const isActive = activeHref === item.href;
@@ -123,10 +124,10 @@ export function Header() {
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
                   className={cn(
-                    "rounded-md px-2 py-3 text-base font-medium transition-colors",
+                    "rounded-sm px-2 py-3 text-base font-medium transition-colors",
                     isActive
-                      ? "text-brand-blue"
-                      : "text-brand-navy hover:bg-brand-gray-50",
+                      ? "text-brass-ink"
+                      : "text-ink hover:bg-surface-2",
                   )}
                 >
                   {item.label}
