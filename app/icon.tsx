@@ -27,7 +27,7 @@ export default function Icon() {
           y1="32"
           x2="104"
           y2="88"
-          stroke="#8A6A3B"
+          stroke="#2554D6"
           strokeWidth="11"
           strokeLinecap="round"
         />
@@ -40,8 +40,8 @@ export default function Icon() {
           strokeWidth="11"
           strokeLinecap="round"
         />
-        <circle cx="16" cy="32" r="10" fill="#8A6A3B" />
-        <circle cx="104" cy="88" r="10" fill="#8A6A3B" />
+        <circle cx="16" cy="32" r="10" fill="#2554D6" />
+        <circle cx="104" cy="88" r="10" fill="#2554D6" />
         <circle cx="104" cy="32" r="10" fill="#12171B" />
         <circle cx="16" cy="88" r="10" fill="#12171B" />
       </svg>

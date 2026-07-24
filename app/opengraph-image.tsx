@@ -39,7 +39,7 @@ export default function Image() {
               y1="55"
               x2="103"
               y2="105"
-              stroke="#8A6A3B"
+              stroke="#2554D6"
               strokeWidth="7"
               strokeLinecap="round"
             />
@@ -52,8 +52,8 @@ export default function Image() {
               strokeWidth="7"
               strokeLinecap="round"
             />
-            <circle cx="17" cy="55" r="8" fill="#8A6A3B" />
-            <circle cx="103" cy="105" r="8" fill="#8A6A3B" />
+            <circle cx="17" cy="55" r="8" fill="#2554D6" />
+            <circle cx="103" cy="105" r="8" fill="#2554D6" />
             <circle cx="103" cy="55" r="8" fill="#FFFFFF" />
             <circle cx="17" cy="105" r="8" fill="#FFFFFF" />
             <line
@@ -65,7 +65,7 @@ export default function Image() {
               strokeWidth="5"
               strokeLinecap="round"
             />
-            <circle cx="60" cy="8" r="5.5" fill="#8A6A3B" />
+            <circle cx="60" cy="8" r="5.5" fill="#2554D6" />
           </svg>
 
           <div
@@ -78,7 +78,7 @@ export default function Image() {
             }}
           >
             INGEX
-            <span style={{ color: "#8A6A3B" }}>IA</span>
+            <span style={{ color: "#2554D6" }}>IA</span>
           </div>
         </div>
 
@@ -86,7 +86,7 @@ export default function Image() {
           style={{
             marginTop: 28,
             fontSize: 32,
-            color: "#C9A46B",
+            color: "#6E93F2",
           }}
         >
           {siteConfig.tagline}

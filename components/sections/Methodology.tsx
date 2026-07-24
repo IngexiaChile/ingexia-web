@@ -7,9 +7,15 @@ export function Methodology() {
   return (
     <section
       id="metodologia"
-      className="scroll-mt-24 bg-ink pb-24 pt-20 sm:pb-28 sm:pt-24"
+      className="relative overflow-hidden scroll-mt-24 bg-ink pb-24 pt-20 sm:pb-28 sm:pt-24"
     >
-      <Container>
+      <div className="bg-grid-faint pointer-events-none absolute inset-0" aria-hidden="true" />
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-surface to-transparent sm:h-24"
+        aria-hidden="true"
+      />
+
+      <Container className="relative">
         <Reveal>
           <SectionHeading
             eyebrow="Metodología"
@@ -29,8 +35,8 @@ export function Methodology() {
             {methodologySteps.map(
               ({ icon: Icon, step, title, description }, index) => (
                 <Reveal key={step} delay={index * 90}>
-                  <div className="relative flex flex-col gap-4">
-                    <div className="relative z-10 inline-flex h-12 w-12 items-center justify-center rounded-full border border-surface/20 bg-ink text-surface">
+                  <div className="group relative flex flex-col gap-4">
+                    <div className="relative z-10 inline-flex h-12 w-12 items-center justify-center rounded-full border border-surface/20 bg-ink text-surface transition-colors duration-200 group-hover:border-blue-light/60">
                       <Icon
                         className="h-5 w-5"
                         aria-hidden="true"
@@ -38,7 +44,7 @@ export function Methodology() {
                       />
                     </div>
                     <div>
-                      <p className="font-mono text-xs tracking-[0.2em] text-brass-light">
+                      <p className="font-mono text-xs tracking-[0.2em] text-blue-light">
                         {step}
                       </p>
                       <h3 className="mt-2 text-base font-semibold tracking-tight text-surface">

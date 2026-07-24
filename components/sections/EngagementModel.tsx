@@ -11,9 +11,13 @@ export function EngagementModel() {
   return (
     <section
       id="modelo-de-intervencion"
-      className="scroll-mt-24 bg-slate py-24 sm:py-28"
+      className="relative scroll-mt-24 bg-slate py-24 sm:py-28"
     >
-      <Container>
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-surface to-transparent sm:h-24"
+        aria-hidden="true"
+      />
+      <Container className="relative">
         <Reveal>
           <SectionHeading
             eyebrow="Modelo de intervención"
@@ -27,7 +31,7 @@ export function EngagementModel() {
           {engagementModel.map((item, index) => (
             <Reveal key={item.step} delay={index * 80}>
               <div className="grid grid-cols-1 gap-3 border-b border-surface/15 py-8 sm:grid-cols-[5rem_1fr] sm:gap-8">
-                <span className="font-mono text-2xl text-brass-light">
+                <span className="font-mono text-2xl text-blue-light">
                   {item.step}
                 </span>
                 <div>

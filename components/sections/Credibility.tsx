@@ -7,10 +7,14 @@ import { credibilityPoints } from "@/data/content";
 // non-numeric on purpose — see data/content.ts for why.
 export function Credibility() {
   return (
-    <section className="bg-slate py-14 sm:py-16">
-      <Container>
+    <section className="relative bg-slate py-14 sm:py-16">
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 h-12 bg-gradient-to-b from-ink to-transparent sm:h-16"
+        aria-hidden="true"
+      />
+      <Container className="relative">
         <Reveal>
-          <p className="mb-8 font-mono text-xs uppercase tracking-[0.2em] text-brass-light">
+          <p className="mb-8 font-mono text-xs uppercase tracking-[0.2em] text-blue-light">
             Cómo operamos
           </p>
           <ul className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">

@@ -5,7 +5,7 @@ import type {
 } from "react";
 import { cn } from "@/lib/cn";
 
-type Variant = "primary" | "primaryOnDark" | "secondary" | "secondaryOnDark";
+type Variant = "primary" | "secondary" | "secondaryOnDark";
 type Size = "md" | "lg";
 
 type CommonProps = {
@@ -27,20 +27,22 @@ type ButtonAsAnchor = CommonProps &
 
 type ButtonProps = ButtonAsButton | ButtonAsAnchor;
 
-// Interactive states change color only — never position, scale or shadow.
-// A precision instrument doesn't bounce when you touch it.
+// A single elegant microinteraction — a 2px lift + shadow bloom — gated by
+// motion-safe so prefers-reduced-motion users get an instant color change
+// instead. No scale, no icon bounce.
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-sm font-medium transition-colors duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass-ink focus-visible:ring-offset-2";
+  "inline-flex items-center justify-center gap-2 rounded-sm font-medium transition-all duration-200 ease-out motion-safe:hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2";
 
 const variants: Record<Variant, string> = {
+  // Solid blue reclaims the CTA as the one thing on the page designed to
+  // be noticed — it works against both the dark Hero and light sections,
+  // so one variant covers every context.
   primary:
-    "border border-ink bg-ink text-surface hover:bg-ink-2 focus-visible:ring-offset-surface",
-  primaryOnDark:
-    "border border-surface bg-surface text-ink hover:bg-surface-2 focus-visible:ring-offset-ink",
+    "border border-blue bg-blue text-surface shadow-[0_10px_28px_-12px_rgba(37,84,214,0.55)] hover:bg-blue-dark hover:border-blue-dark hover:shadow-[0_16px_36px_-12px_rgba(37,84,214,0.6)] focus-visible:ring-offset-surface",
   secondary:
-    "border border-ink/20 bg-transparent text-ink hover:border-brass-ink hover:text-brass-ink focus-visible:ring-offset-surface",
+    "border border-ink/20 bg-transparent text-ink hover:border-blue hover:text-blue focus-visible:ring-offset-surface",
   secondaryOnDark:
-    "border border-surface/25 bg-transparent text-surface hover:border-brass-light hover:text-brass-light focus-visible:ring-offset-ink",
+    "border border-surface/25 bg-transparent text-surface hover:border-blue-light hover:text-blue-light focus-visible:ring-offset-ink",
 };
 
 const sizes: Record<Size, string> = {

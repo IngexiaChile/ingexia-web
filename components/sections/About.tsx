@@ -3,10 +3,14 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function About() {
   return (
-    <section id="nosotros" className="scroll-mt-24 bg-ink py-24 sm:py-32">
-      <Container>
+    <section id="nosotros" className="relative scroll-mt-24 bg-ink py-24 sm:py-32">
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-surface to-transparent sm:h-24"
+        aria-hidden="true"
+      />
+      <Container className="relative">
         <Reveal>
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-brass-light">
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-blue-light">
             Nosotros
           </p>
           <h2 className="mt-4 max-w-3xl text-balance text-3xl font-semibold tracking-tight text-surface sm:text-4xl lg:text-5xl">
@@ -35,7 +39,7 @@ export function About() {
           </Reveal>
 
           <Reveal delay={160}>
-            <p className="mt-8 border-l-2 border-brass-ink pl-5 text-lg font-medium text-surface">
+            <p className="mt-8 border-l-2 border-blue pl-5 text-lg font-medium text-surface">
               Trabajamos como una extensión del equipo de tecnología de
               nuestros clientes, no como un proveedor externo más.
             </p>

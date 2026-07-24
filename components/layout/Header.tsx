@@ -12,7 +12,7 @@ import { siteConfig, contactHref } from "@/config/site";
 const SURFACE: [number, number, number] = [237, 239, 234];
 const INK: [number, number, number] = [18, 23, 27];
 const GRAPHITE: [number, number, number] = [87, 98, 107];
-const BRASS = "#8A6A3B";
+const BLUE = "#2554D6";
 
 function mix(from: [number, number, number], to: [number, number, number], t: number) {
   const [r, g, b] = from.map((c, i) => Math.round(c + (to[i] - c) * t));
@@ -65,7 +65,7 @@ export function Header() {
           <Logo iconClassName="h-7 lg:h-8" wordClassName="text-lg" />
         </a>
 
-        <nav className="hidden items-center gap-9 md:flex">
+        <nav aria-label="Navegación principal" className="hidden items-center gap-9 md:flex">
           {siteConfig.nav.map((item) => {
             const isActive = activeHref === item.href;
             return (
@@ -76,7 +76,7 @@ export function Header() {
                   "group relative inline-block py-1 text-sm font-medium transition-opacity duration-300",
                   isActive ? "opacity-100" : "opacity-75 hover:opacity-100",
                 )}
-                style={{ color: isActive ? BRASS : mutedColor }}
+                style={{ color: isActive ? BLUE : mutedColor }}
               >
                 {item.label}
                 <span
@@ -114,7 +114,10 @@ export function Header() {
       </Container>
 
       {mobileOpen && (
-        <div className="relative border-t border-ink/10 bg-surface md:hidden">
+        <nav
+          aria-label="Navegación móvil"
+          className="relative border-t border-ink/10 bg-surface md:hidden"
+        >
           <Container className="flex flex-col gap-1 py-4">
             {siteConfig.nav.map((item) => {
               const isActive = activeHref === item.href;
@@ -126,7 +129,7 @@ export function Header() {
                   className={cn(
                     "rounded-sm px-2 py-3 text-base font-medium transition-colors",
                     isActive
-                      ? "text-brass-ink"
+                      ? "text-blue-dark"
                       : "text-ink hover:bg-surface-2",
                   )}
                 >
@@ -142,7 +145,7 @@ export function Header() {
               Conversemos
             </Button>
           </Container>
-        </div>
+        </nav>
       )}
     </header>
   );

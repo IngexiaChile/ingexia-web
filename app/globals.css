@@ -1,23 +1,30 @@
 @import "tailwindcss";
 
 :root {
-  --background: #edefea;
+  --background: #f4f6f9;
   --foreground: #12171b;
 
-  /* Engineering Intelligence palette — mineral, digital-native, no pure
-     white and no saturated startup blue. See project creative brief for
-     the full rationale behind each token. */
+  /* Engineering Intelligence palette — mineral base (ink/surface/slate)
+     carries the seriousness; a single refined blue is the one strategic
+     accent (buttons, active states, icon chips, borders, subtle glow).
+     No second accent color — everything drives through these four blues
+     so every component reads as one system. Surface is a cool light grey,
+     never pure #FFFFFF — close enough to white to stay premium and quiet,
+     far enough from it to avoid the "cut paper" look between sections. */
   --color-ink: #12171b;
-  --color-ink-2: #1b2227;
-  --color-surface: #edefea;
-  --color-surface-2: #e2e5de;
+  --color-surface: #f4f6f9;
+  --color-surface-2: #e8ebf0;
   --color-slate: #33424c;
-  --color-slate-2: #3f505b;
   --color-graphite: #57626b;
   --color-graphite-2: #8e9ca3;
-  --color-brass: #8a6a3b;
-  --color-brass-ink: #6b5228;
-  --color-brass-light: #c9a46b;
+  --color-blue: #2554d6;
+  --color-blue-dark: #1a3fae;
+  --color-blue-light: #6e93f2;
+  --color-blue-50: #eef2fd;
+
+  /* Semantic-only — validation feedback in the contact form. Deliberately
+     not part of the brand accent system. */
+  --color-error: #b3261e;
 }
 
 @theme inline {
@@ -25,16 +32,16 @@
   --color-foreground: var(--foreground);
 
   --color-ink: var(--color-ink);
-  --color-ink-2: var(--color-ink-2);
   --color-surface: var(--color-surface);
   --color-surface-2: var(--color-surface-2);
   --color-slate: var(--color-slate);
-  --color-slate-2: var(--color-slate-2);
   --color-graphite: var(--color-graphite);
   --color-graphite-2: var(--color-graphite-2);
-  --color-brass: var(--color-brass);
-  --color-brass-ink: var(--color-brass-ink);
-  --color-brass-light: var(--color-brass-light);
+  --color-blue: var(--color-blue);
+  --color-blue-dark: var(--color-blue-dark);
+  --color-blue-light: var(--color-blue-light);
+  --color-blue-50: var(--color-blue-50);
+  --color-error: var(--color-error);
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -47,8 +54,7 @@ body {
 }
 
 /* Scroll-reveal primitive: starts hidden, animates in once JS adds
-   .is-visible. This is the ONLY motion pattern used across the site —
-   uniform fade + 16px translate, once, never looped or decorative. */
+   .is-visible. */
 .reveal {
   opacity: 0;
   transform: translateY(16px);
@@ -68,4 +74,14 @@ body {
     transform: none;
     transition: none;
   }
+}
+
+/* Very faint technical grid, used only on the two dark "flagship" sections
+   (Hero, Methodology) to add texture/depth — deliberately low-contrast so
+   it reads as material, not as a decorative pattern. */
+.bg-grid-faint {
+  background-image:
+    linear-gradient(to right, rgba(110, 147, 242, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(110, 147, 242, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
 }

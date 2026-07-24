@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Sora } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
 
@@ -25,6 +26,9 @@ const sora = Sora({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
+  alternates: {
+    canonical: siteConfig.url,
+  },
   title: {
     default: "INGEXIA | Ingeniería, Inteligencia Artificial y Transformación Digital",
     template: `%s | ${siteConfig.name}`,
@@ -95,6 +99,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <WhatsAppButton />
       </body>
     </html>
   );

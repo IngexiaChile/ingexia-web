@@ -3,7 +3,7 @@
  * "X", per the official brand guideline. Primary strokes/fills use
  * `currentColor` so the mark adapts to light or dark backgrounds through
  * ordinary CSS color inheritance; the accent diagonal and its two nodes stay
- * fixed at the brand brass tone in every context.
+ * fixed at the brand blue in every context.
  */
 export function Isotype({ className }: { className?: string }) {
   return (
@@ -25,7 +25,7 @@ export function Isotype({ className }: { className?: string }) {
         y1="55"
         x2="103"
         y2="105"
-        stroke="#8A6A3B"
+        stroke="#2554D6"
         strokeWidth="6"
         strokeLinecap="round"
       />
@@ -39,8 +39,8 @@ export function Isotype({ className }: { className?: string }) {
         strokeLinecap="round"
       />
 
-      <circle cx="17" cy="55" r="7" fill="#8A6A3B" />
-      <circle cx="103" cy="105" r="7" fill="#8A6A3B" />
+      <circle cx="17" cy="55" r="7" fill="#2554D6" />
+      <circle cx="103" cy="105" r="7" fill="#2554D6" />
       <circle cx="103" cy="55" r="7" fill="currentColor" />
       <circle cx="17" cy="105" r="7" fill="currentColor" />
 
@@ -53,7 +53,7 @@ export function Isotype({ className }: { className?: string }) {
         strokeWidth="4"
         strokeLinecap="round"
       />
-      <circle cx="60" cy="8" r="4.5" fill="#8A6A3B" />
+      <circle cx="60" cy="8" r="4.5" fill="#2554D6" />
     </svg>
   );
 }

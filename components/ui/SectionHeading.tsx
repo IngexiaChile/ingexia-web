@@ -29,7 +29,7 @@ export function SectionHeading({
         <p
           className={cn(
             "mb-4 font-mono text-xs font-medium uppercase tracking-[0.2em]",
-            tone === "dark" ? "text-brass-light" : "text-brass-ink",
+            tone === "dark" ? "text-blue-light" : "text-blue-dark",
           )}
         >
           {eyebrow}
